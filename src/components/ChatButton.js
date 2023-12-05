@@ -1,18 +1,19 @@
-import React from 'react';
-import { TouchableOpacity, Image, View, StyleSheet } from 'react-native';
-import SendIcon from '../../assets/icons/paper-plane.png';
-
-const ChatButton = ({ sendMessage, title }) => {
-    return (
-        <TouchableOpacity onPress={sendMessage}>
-            <View style={styles.neumorphicContainer}>
-                <Image source={SendIcon} style={styles.iconImage} resizeMode="contain" />
-            </View>
-        </TouchableOpacity>
-    );
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-
-const styles = StyleSheet.create({
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(require("react"));
+const react_native_1 = require("react-native");
+const paper_plane_png_1 = __importDefault(require("../../assets/icons/paper-plane.png"));
+const ChatButton = ({ sendMessage }) => {
+    return (<react_native_1.TouchableOpacity onPress={sendMessage}>
+            <react_native_1.View style={styles.neumorphicContainer}>
+                <react_native_1.Image source={paper_plane_png_1.default} style={styles.iconImage} resizeMode="contain"/>
+            </react_native_1.View>
+        </react_native_1.TouchableOpacity>);
+};
+const styles = react_native_1.StyleSheet.create({
     neumorphicContainer: {
         backgroundColor: '#2E2E2E',
         borderRadius: 25,
@@ -27,15 +28,13 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.5,
         shadowRadius: 5,
-        elevation: 5, // For Android
+        elevation: 5,
         marginBottom: 8,
     },
     iconImage: {
-        width: '70%', // Adjust the percentage or use a specific pixel value
-        height: '70%', // Adjust the percentage or use a specific pixel value
+        width: '70%',
+        height: '70%',
         tintColor: 'white', // Adjust the tint color as needed
     },
 });
-
-export default ChatButton;
-
+exports.default = ChatButton;
