@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
-
+import { styles } from './ChatInput.styles';
 interface ChatInputProps {
     onChangeText: (text: string) => void;
     value: string;
@@ -8,17 +8,10 @@ interface ChatInputProps {
 const ChatInput: React.FC<ChatInputProps> = ({ onChangeText, value }) => {
     return (
         <View
-            style={{
-                flex: .8, // Set flex to 1 to allow the TextInput to take available space
-                backgroundColor: '#1E1E1E',
-                padding: 10,
-                marginBottom: 4,
-                flexDirection: 'row',
-                alignItems: 'center',
-            }}
+            style={styles.inputContainer}
         >
             <TextInput
-                style={{ flex: 1, color: 'white' }}
+                style={styles.textInput}
                 placeholder="Type your message..."
                 placeholderTextColor="#9E9E9E"
                 onChangeText={onChangeText}

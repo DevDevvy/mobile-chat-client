@@ -4,6 +4,7 @@ import ChatInput from '../components/ChatInput';
 import ChatDisplay from '../components/ChatDisplay';
 import ChatButton from '../components/ChatButton';
 import { Platform } from 'react-native';
+import {styles} from './ChatScreen.styles';
 
 const ChatScreen = () => {
     const [message, setMessage] = useState<string>('');
@@ -30,19 +31,5 @@ const ChatScreen = () => {
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#121212',
-
-    },
-    inputContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: 10,
-        backgroundColor: '#1E1E1E',
-    },
-});
 
 export default ChatScreen;
